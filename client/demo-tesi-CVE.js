@@ -1,5 +1,35 @@
+/*
+setTimeout(function() {
+Meteor.Keybindings.add({
+    '←' : function () { console.log('sin'); },
+    '→' : function () { console.log('des'); },
+    '↓' : function () { console.log('giu'); },
+    '↑' : function () { console.log('su'); }
+});}, 2000);
 
+*/
+/*
+UI.body.events({
+  	// Assuming you're using jQuery 
+ 	$('body').on('keydown',function() { 
+                alert('key pressed');
+  },
+  
+});
+*/
 
+/*
+Template.body.events({
+'keydown input': function(event) {
+        if (event.keycode == 38) {
+            alert('freccia su');
+            event.stopPropagation();
+            return false;
+        }
+    
+  }
+});
+*/
 
 /* ----- DEFAULT -------
 if (Meteor.isClient) {

@@ -6,3 +6,9 @@
 meteor-platform
 autopublish
 insecure
+keybindings
+accounts-ui-bootstrap-dropdown
+bootstrap
+accounts-password
+
+accounts-base
