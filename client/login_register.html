@@ -6,11 +6,22 @@
       		Username:
         	<input type="text" id="login-username" />
         	<br>
+        	
+        	<div class="color-picker">
+				<p>SCEGLI IL TUO COLORE</p>
+				{{#each colors}}
+					<div class="swatch{{#if activeColor}} active{{/if}}" style="background-color: {{code}}">
+						{{name}}
+					</div>
+				{{/each}}
+			</div>
+        	
         	<input type="submit" id="login-button" value="Sign in" />
      	</div>
   	</form> 
 
 </template>
+
 
 <template name="temporary_logout">
 
@@ -21,6 +32,12 @@
   	</form> 
 
 </template>
+
+
+
+
+
+
 
 
 <!--

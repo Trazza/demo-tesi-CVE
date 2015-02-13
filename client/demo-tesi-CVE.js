@@ -1,89 +1,27 @@
- var username = "Non sei loggato";
- 
-
- 
- Template.temporary_login.events({
-
-    'submit #temporary_login_form' : function(e, t){  //login
-    	e.preventDefault(); //  ???
-      
-      	//estraggo il nome dal form di login
-    	var username = t.find('#login-username').value;
-    	 
-    	if (username.replace(/ /g, '') == "") {  //verifico che il nome non sia una sequenza di spazi
-    		alert("inserisci username");
-    	} else {
-    		var user_id = username.replace(/ /g, '')+ "_id";
-    		if (typeof(Players.findOne(user_id)) != 'undefined'){
-    			alert('utente ESISTENTE');
-    		}else{;
-    			alert('CONFERMATO');
-				Session.set("mode", "scenaMode");
-				Session.set("utente", username); 
-				Session.set("user_id", user_id); 
-				
-				 //posizione iniziale del player
- 				var x = "3";
- 				var y = "1";
- 				var z = "1";
- 				
-				
-				Players.insert({  	//inserisco nome utente e id nella collection
- 	        		nome: username,
-    	      		_id: user_id,
-    	      		x: x,
-    	      		y: y,
-    	      		z: z
-        		});
-			
-				//aggiungo la box nell'x3d
-      			//$("#scena_x3d").append("<transform DEF='BOX_red' id='BOX"+user_id+"' translation='"+Players.findOne(Session.get('user_id')).x+" "+Players.findOne(Session.get('user_id')).y+" "+Players.findOne(Session.get('user_id')).z+"' rotation='0 0 1 0' > <shape> <appearance> <material diffuseColor='1 0 0'></material> </appearance> <box size='2 2 2'></box> </shape> </transform>		");
-    	   		
-    	   		$("#nome_utente_log").append("BENVENUTO "+ username);
-    	   	
-    	   		
-			}
-       	}
-      }
-  });
-  
-  
-  Template.temporary_logout.events({
-
-    'submit #temporary_logout_form' : function(e, t){
-    e.preventDefault(); //  ???
-      
-      	//estraggo il nome dal form di login
-    	
-		Session.set("mode", "loginMode");
-		Session.set("utente", "Non sei loggato");
-		$("#nome_utente_log").empty();
-		Players.remove(Session.get('user_id'));
-      
-       
-      }
-  });
-
-
-//imposto la visualizzazione iniziale con login
+ //imposto la visualizzazione iniziale con login
 Session.set("mode", "loginMode");
 Session.set("utente", username);
+Session.set("color", "brown");
+ 
+var username = "Non sei loggato";
 
+ 
 
 
 
 UI.body.helpers({
+
+
 	loginMode: function () {
-    return Session.equals("mode", "loginMode");
+ 	   return Session.equals("mode", "loginMode");
  	 },
  	 
  	players: function () {
-    return Players.find();
-  },
+    	return Players.find();
+ 	 },
+ 	 
   
 });
-
-
 
 
 
