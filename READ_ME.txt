@@ -1,3 +1,11 @@
+aprire meteor su un’altra porta 
+$ meteor --port 1337
+
+
+
+
+
+
 - Istallare Meteor
 
 [sudo] npm install -g meteorite

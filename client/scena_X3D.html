@@ -1,8 +1,9 @@
 <template name="scena">
  <p> X3D </p>
+
 <x3d width='1000px' height='500px'>
 	
-		<Scene>
+		<Scene id="scena_x3d">
 		
 		<transform DEF="Camera_TRANSFORM"
 			           translation="-7.481132 5.343665 -6.507640"
@@ -29,8 +30,8 @@
 			            location="-0.0000 -0.0000 0.0000" ></PointLight>
 		</Transform>
 			
-			
-		<transform DEF='BOX_red' id="BOX_red" translation='3 1 1' rotation='0 0 1 0' >
+		{{#each players}}	
+		<transform id='{{_id}}' translation='{{x}} {{y}} {{z}}' rotation='0 0 1 0' >
 					<shape>
 						<appearance>
 							<material diffuseColor="1 0 0"></material>  
@@ -38,6 +39,7 @@
 						<box size='2 2 2'></box>
 					</shape>
 		</transform>		
+	 	{{/each}}
 		
 			<transform rotation="-1.5707963267948966 0 0 1.5707963267948966">
 		  		<shape>
@@ -53,4 +55,5 @@
 			
 		</Scene>
 </x3d>
+
 </template>

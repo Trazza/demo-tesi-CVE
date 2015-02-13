@@ -1,0 +1,31 @@
+COLLECTION
+- Prevedere la possibilita di avere più 'stanze' a cui accedere (ogni collection è una stanza)
+- Verificare la possibilità di creare cancellare e visualizzare agli utenti quelle già cerate
+- collection solo per la lista dei giocatori loggati nella stanza (nome più colore)
+
+LOGIN: 
+- inserisce elemento nella collezione
+- possibilità di scegliere il colore 
+
+
+LOGOUT: elimina elemento dalla collezione
+
+Timeout di uscita per inattività
+
+
+
+
+SCENA
+- prevedere lista di utenti connessi con il riferimento del colore 
+
+- l'oggetto viene caricato dal client.js in html(main)  e gestito lato client 
+	-id oggetto = nomeutente_id
+	
+	
+	
+	
+	
+TODO da risolvere
+- se si effettua il login e si riavvia la pagina viene richiesto nuovamente il login MA l'utente rimane nella lista 
+
+- le box non vengono caricate se l'X3D è su un template separato
